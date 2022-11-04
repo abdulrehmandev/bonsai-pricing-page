@@ -1,0 +1,151 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+
+  font-family: sans-serif;
+  font-size: 16px;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+.container {
+  width: min(1000px, 100% - 2rem);
+  margin-inline: auto;
+}
+
+.header-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+}
+
+.header-logo {
+  height: 1.5rem;
+}
+
+.header-nav {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-size: 0.8rem;
+  color: #4c4d5f;
+}
+
+.nav-link:hover {
+  color: #000;
+}
+
+.btn-wrapper {
+  display: flex;
+  gap: 1rem;
+}
+
+.header-btn {
+  height: 34px;
+  padding-inline: 15px;
+  border: none;
+  text-transform: uppercase;
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.03rem;
+  border-radius: 3px;
+  transition: all ease 200ms;
+}
+
+.login {
+  border: 1px solid #00b289;
+  color: #00b289;
+  background-color: transparent;
+}
+
+.login:hover {
+  color: white;
+  background-color: #00b289;
+}
+
+.start-free {
+  color: #fff;
+  background-color: #00b289;
+}
+
+.start-free:hover {
+  background-color: #009673;
+}
+
+.toggle {
+  display: none;
+}
+
+@media (max-width: 50em) {
+  .toggle {
+    display: block;
+    background: transparent;
+    background-image: url(./images/icon-hamburger.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 30px;
+    height: 30px;
+    width: 30px;
+    border: none;
+    z-index: 1000;
+  }
+
+  .toggle[aria-expanded='true'] {
+    background-image: url(./images/icon-close.png);
+    background-size: 25px;
+  }
+
+  .btn-wrapper {
+    display: none;
+  }
+
+  .primary-navigation {
+    position: fixed;
+    inset: 0 0 0 30%;
+    background-color: white;
+    transform: translateX(100%);
+    transition: transform ease-in-out 400ms;
+    box-shadow: -5px 0 10px rgb(0, 0, 0, 0.1);
+  }
+
+  .header-nav {
+    margin-top: 6rem;
+    margin-left: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    font-size: 1rem;
+  }
+
+  .nav-visible {
+    transform: translateX(0);
+  }
+}
