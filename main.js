@@ -1,6 +1,10 @@
 
-const navBtn = document.querySelector('.toggle')
+const navBtn = document.querySelector('.header-toggle')
 const primaryNav = document.querySelector('.primary-navigation')
+const toggleSwitch = document.querySelector('.toggle-switch')
+
+const monthlyText = document.querySelector('.plan-monthly')
+const yearlyText = document.querySelector('.plan-yearly')
 
 // nav menu click
 
@@ -11,16 +15,15 @@ navBtn.addEventListener('click', () => {
   (navBtn.getAttribute('aria-expanded') === 'false' ? true : false))
 })
 
-// dropdown hover
+toggleSwitch.addEventListener('click', () => {
+  toggleSwitch.setAttribute('data-toggled',
+    (toggleSwitch.getAttribute('data-toggled') === 'false' ? true : false))
 
-const dropdownTitle = document.querySelector('.dropdown')
-const dropdownMenu = document.querySelector('.dropdown-menu')
-
-let rotation = 0
-
-dropdownTitle.addEventListener('mousemove', () => {
-  dropdownMenu.classList.toggle('dropdown-visible')
-
-  rotation = rotation == 0 ? 180 : 0
-  document.querySelector('.dropdown-arrow').style.transform = `rotate(${rotation}deg)`
+  if(monthlyText.classList.contains('active')) {
+    yearlyText.classList.add('active')
+    monthlyText.classList.remove('active')
+  } else {
+    yearlyText.classList.remove('active')
+    monthlyText.classList.add('active')
+  }
 })

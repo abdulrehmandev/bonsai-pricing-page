@@ -3,6 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <link href="./style.css" rel="stylesheet">
 
     <title>Pricing - Bonsai Freelance Solution</title>
@@ -19,13 +23,13 @@
           </a>
           <nav class="primary-navigation" id="primary-navigation">
             <ul class="header-nav">
-              <li class="nav-item dropdown">
+              <li class="nav-item produce-dropdown dropdown">
                 <a href="#" class="nav-link dropdown-title">Produce
                   <img class="dropdown-arrow"
                     src="./images/icon-down.svg"
                     alt="" />
                 </a>
-                <ul class="dropdown-menu">
+                <ul class="dropdown-menu produce-menu">
                   <li class="dropdown-item">
                     <a href="#" class="dropdown-link">
                       <h3 class="link-title">Bonsai Workflow</h3>
@@ -55,10 +59,31 @@
             <button class="header-btn login">Log in</button>
             <button class="header-btn start-free">start free</button>
           </div>
-          <button class="toggle" aria-expanded="false"></button>
+          <button class="header-toggle" aria-expanded="false"></button>
         </div>
       </div>
     </header>
+
+    <main class="main">
+      <div class="container">
+        <div class="pricing-wrapper">
+          <div class="pricing-header">
+            <h1 class="pricing-title">Plans & Pricing</h1>
+            <div class="plan-btn-wrapper">
+              <p class="plan-monthly plan-text active">Monthly</p>
+              <div class="toggle-switch" data-toggled="false">
+                <div class="toggle"></div>
+              </div>
+              <p class="plan-yearly plan-text">Yearly</p>
+            </div>
+          </div>
+          <section>
+
+          </section>
+        </div>
+      </div>
+    </main>
+
 
     <script type="module" src="/main.js"></script>
   </body>
