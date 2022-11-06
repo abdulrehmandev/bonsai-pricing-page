@@ -33,7 +33,7 @@ a {
 }
 
 .container {
-  width: min(1200px, 100% - 3rem);
+  width: min(1100px, 100% - 3rem);
   margin-inline: auto;
 }
 
@@ -432,6 +432,54 @@ a {
   border-radius: 3px;
   transition: all ease 200ms;
 }
+
+.faq-pricing {
+  max-width: 55rem;
+  margin-inline: auto;
+  padding: 1rem;
+}
+
+.faq-title {
+  text-align: center;
+  color: #00b289;
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+}
+
+.accordian {
+  width: 100%;
+  text-align: left;
+  padding: 1rem 0;
+  font-weight: 500;
+  font-size: 1.5rem;
+  background: transparent;
+  border: none;
+}
+
+.accordian:after {
+  content: "";
+  background: url(./images/icon-down.svg);
+  background-size: 30px;
+  background-repeat: no-repeat;
+  width: 30px;
+  height: 30px;
+  float: right;
+  transition: all ease 300ms;
+}
+
+.accordian[data-opened='true']:after {
+  rotate: 180deg;
+}
+
+.panel {
+  color: #4c4d5f;
+  font-size: 1.1rem;
+  line-height: 1.6rem;
+  overflow: hidden;
+  max-height: 0;
+  transition: all ease 0.4s;
+}
+
 
 
 

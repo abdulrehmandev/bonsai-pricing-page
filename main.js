@@ -8,8 +8,11 @@ const yearlyText = document.querySelector('.plan-yearly')
 
 const priceTitles = document.querySelectorAll('.price')
 
+const faqAccordian = document.querySelectorAll('.accordian')
+
 let yearlyPrices = [17, 32, 52]
 let monthlyPrices = [24, 39, 79]
+
 
 navBtn.addEventListener('click', () => {
   primaryNav.classList.toggle('nav-visible')
@@ -49,3 +52,26 @@ toggleSwitch.addEventListener('click', () => {
   })
 
 })
+
+faqAccordian.forEach(accordian => {
+  accordian.addEventListener('click', () => {
+    var panel = accordian.nextElementSibling
+  
+    // panel.style.display = panel.style.display === 'block' ? 'none' : 'block'
+    panel.style.maxHeight = panel.style.maxHeight ? null : panel.scrollHeight + 'px'
+    accordian.setAttribute(
+      'data-opened',
+      (accordian.getAttribute('data-opened') === 'false' ? true : false)
+    )
+  })
+})
+// faqAccordian.addEventListener('click', () => {
+//   var panel = faqAccordian.nextElementSibling
+
+//   // panel.style.display = panel.style.display === 'block' ? 'none' : 'block'
+//   panel.style.maxHeight = panel.style.maxHeight ? null : panel.scrollHeight + 'px'
+//   faqAccordian.setAttribute(
+//     'data-opened',
+//     (faqAccordian.getAttribute('data-opened') === 'false' ? true : false)
+//   )
+// })
