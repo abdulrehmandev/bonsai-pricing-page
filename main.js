@@ -19,11 +19,11 @@ toggleSwitch.addEventListener('click', () => {
   toggleSwitch.setAttribute('data-toggled',
     (toggleSwitch.getAttribute('data-toggled') === 'false' ? true : false))
 
-  if(monthlyText.classList.contains('active')) {
-    yearlyText.classList.add('active')
-    monthlyText.classList.remove('active')
+  if(monthlyText.classList.contains('active-plan')) {
+    yearlyText.classList.add('active-plan')
+    monthlyText.classList.remove('active-plan')
   } else {
-    yearlyText.classList.remove('active')
-    monthlyText.classList.add('active')
+    yearlyText.classList.remove('active-plan')
+    monthlyText.classList.add('active-plan')
   }
 })

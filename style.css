@@ -11,6 +11,7 @@ body {
 
   font-family: 'Noto Sans', sans-serif;
   font-size: 16px;
+  padding-top: 70px;
 }
 
 h1,
@@ -32,8 +33,20 @@ a {
 }
 
 .container {
-  width: min(1000px, 100% - 2rem);
+  width: min(1200px, 100% - 2rem);
   margin-inline: auto;
+}
+
+.hidden {
+  display: none;
+}
+
+.primary-header {
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  box-shadow: 0 3px 1rem rgb(0, 0, 0, 0.08  );
 }
 
 .header-wrapper {
@@ -78,7 +91,7 @@ a {
   align-items: flex-start;
   gap: 0.8rem;
   position: fixed;
-  top: 3.5rem;
+  top: 3rem;
   background-color: #fff;
   list-style: none;
   width: 15rem;
@@ -126,11 +139,6 @@ a {
   rotate: 180deg;
 }
 
-
-
-
-
-
 .btn-wrapper {
   display: flex;
   gap: 1rem;
@@ -172,56 +180,16 @@ a {
   display: none;
 }
 
-@media (max-width: 50em) {
-  .header-toggle {
-    display: block;
-    background: transparent;
-    background-image: url(./images/icon-hamburger.svg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 30px;
-    height: 30px;
-    width: 30px;
-    border: none;
-    z-index: 1000;
-  }
-
-  .header-toggle[aria-expanded='true'] {
-    background-image: url(./images/icon-close.svg);
-  }
-
-  .btn-wrapper {
-    display: none;
-  }
-
-  .primary-navigation {
-    position: fixed;
-    inset: 0 0 0 30%;
-    background-color: white;
-    transform: translateX(100%);
-    transition: transform ease-in-out 400ms;
-    box-shadow: -5px 0 20px rgb(0, 0, 0, 0.05);
-  }
-
-  .header-nav {
-    margin-top: 6rem;
-    margin-left: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
-    font-size: 1rem;
-  }
-
-  .nav-visible {
-    transform: translateX(0);
-  }
-}
-
-
 /* 
   main
   pricing section
 */
+
+.top-spacing {
+  height: 5rem;
+  width: 100%;
+  background: transparent;
+}
 
 .pricing-header {
   display: flex;
@@ -243,6 +211,7 @@ a {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
+  position: relative;
 }
 
 .toggle-switch {
@@ -274,6 +243,302 @@ a {
   letter-spacing: 0.1rem;
 }
 
-.active {
+.active-plan {
   color: #000;
+}
+
+.plan-2months-img {
+  position: absolute;
+  height: 35px;
+  bottom: 1rem;
+  right: -0.8rem;
+}
+
+.main-cards {
+  margin-block: 1rem;
+  padding: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.plan-card {
+  padding: 3rem 2rem;
+  box-shadow: 0 0 2rem rgb(0, 0, 0, 0.05);
+  color: #4c4d5f;
+  border: 1px solid rgb(0, 0, 0, 0.1);
+}
+
+.card-title {
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.card-text{
+  font-size: 0.8rem;
+  margin-bottom: 0.7rem;
+  width: 80%;
+}
+
+.price-wrapper {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.dollar {
+  font-weight: 400;
+  margin-top: 0.2rem;
+  font-size: 2rem;
+  align-self: flex-start;
+}
+
+.price {
+  font-weight: 600;
+  color: #000;
+  font-size: 3.5rem;
+}
+
+.per-month {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  align-self: flex-end;
+}
+
+.billed-yearly {
+  text-align: right;
+  font-size: 0.8rem;
+}
+
+.card-plan-features {
+  border-top: 2px solid #00b289;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  list-style: none;
+  padding: 2rem 0;
+  margin-top: 0.2rem;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.card-btn {
+  height: 50px;
+  width: 100%;
+  border: none;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.0.8rem;
+  border-radius: 3px;
+  transition: all ease 200ms;
+}
+
+.addons-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  color: #4c4d5f;
+}
+
+.addons-title {
+  text-align: center;
+  font-family: 'Lora', serif;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+  width: 80%;
+  margin-inline: auto;
+}
+
+.addon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  box-shadow: 0 0 2rem rgb(0, 0, 0, 0.07);
+  height: 10rem;
+}
+
+.addon-title {
+  font-weight: 600;
+  font-size: 1.4em;
+  margin-bottom: 0.2rem;
+}
+
+.addon-text {
+  font-size: 0.9em;
+  margin-bottom: 0.7rem;
+}
+
+.addon-link {
+  color: #00b289;
+  font-weight: 500;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.addon-link:hover {
+  text-decoration: underline;
+}
+
+.addon-price-wrapper {
+  width: 200px;
+  text-align: center;
+}
+
+.addon-price {
+  font-weight: 600;
+  font-size: 3rem;
+}
+
+.addon-per-month {
+  font-size: 0.8rem;
+}
+
+.cta {
+  max-width: 60rem;
+  margin-inline: auto;
+  background-color: rgb(0, 178, 137, 0.04);
+  padding: 4rem 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.cta-title {
+  font-family: 'Lora', serif;
+  font-weight: 400;
+  font-size: 2.5rem;
+}
+
+.cta-btn {
+  height: 50px;
+  width: 150px;
+  border: none;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.0.8rem;
+  border-radius: 3px;
+  transition: all ease 200ms;
+}
+
+
+
+
+@media (max-width: 992px) {
+  .main-cards {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 50em) {
+  .header-toggle {
+    display: block;
+    background: transparent;
+    background-image: url(./images/icon-hamburger.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 30px;
+    height: 30px;
+    width: 30px;
+    border: none;
+    z-index: 2000;
+  }
+
+  .header-toggle[aria-expanded='true'] {
+    background-image: url(./images/icon-close.svg);
+  }
+
+  .btn-wrapper {
+    display: none;
+  }
+
+  .primary-navigation {
+    position: fixed;
+    inset: 0 0 0 30%;
+    background-color: #fff;
+    transform: translateX(100%);
+    transition: transform ease-in-out 400ms;
+    box-shadow: -5px 0 20px rgb(0, 0, 0, 0.05);
+    z-index: 1000;
+    padding-inline: 1rem;
+  }
+
+  .header-nav {
+    margin-top: 6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .nav-link {
+    font-size: 1.1rem;
+  }
+
+  .nav-visible {
+    transform: translateX(0);
+  }
+
+  .dropdown-menu {
+    box-shadow: none;
+    width: 80%;
+  }
+
+  .hidden {
+    display: none;
+  }
+  
+  .cta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .pricing-title {
+    font-size: 1.2rem;
+  }
+  .top-spacing {
+    height: 2rem;
+  }
+}
+
+@media (max-width: 540px) {
+  .pricing-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .plan-btn-wrapper {
+    align-self: flex-end;
+  }
+
+  .top-spacing {
+    height: 1rem;
+  }
+
+  .addon {
+    height: auto;
+    flex-direction: column;
+    font-size: 14px;
+  }
+
+  .addon-body {
+    order: 2;
+  }
+
+  .addon-price-wrapper {
+    margin-right: auto;
+    width: auto;
+    order: 1;
+    margin-bottom: 0.6rem;
+  }
 }
