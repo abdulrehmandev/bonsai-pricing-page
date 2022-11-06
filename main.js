@@ -17,15 +17,19 @@ let monthlyPrices = [24, 39, 79]
 navBtn.addEventListener('click', () => {
   primaryNav.classList.toggle('nav-visible')
 
-  navBtn.setAttribute('aria-expanded',
-  (navBtn.getAttribute('aria-expanded') === 'false' ? true : false))
+  navBtn.setAttribute(
+    'aria-expanded',
+    (navBtn.getAttribute('aria-expanded') === 'false' ? true : false)
+  )
 })
 
 toggleSwitch.addEventListener('click', () => {
-  toggleSwitch.setAttribute('data-toggled',
-    (toggleSwitch.getAttribute('data-toggled') === 'false' ? true : false))
+  toggleSwitch.setAttribute(
+    'data-toggled',
+    (toggleSwitch.getAttribute('data-toggled') === 'false' ? true : false)
+  )
 
-  if(monthlyText.classList.contains('active-plan')) {
+  if (monthlyText.classList.contains('active-plan')) {
     yearlyText.classList.add('active-plan')
     monthlyText.classList.remove('active-plan')
   } else {
@@ -50,14 +54,12 @@ toggleSwitch.addEventListener('click', () => {
   document.querySelectorAll('.billed-yearly').forEach(el => {
     el.classList.toggle('hidden')
   })
-
 })
 
 faqAccordian.forEach(accordian => {
   accordian.addEventListener('click', () => {
     var panel = accordian.nextElementSibling
-  
-    // panel.style.display = panel.style.display === 'block' ? 'none' : 'block'
+
     panel.style.maxHeight = panel.style.maxHeight ? null : panel.scrollHeight + 'px'
     accordian.setAttribute(
       'data-opened',
@@ -65,13 +67,3 @@ faqAccordian.forEach(accordian => {
     )
   })
 })
-// faqAccordian.addEventListener('click', () => {
-//   var panel = faqAccordian.nextElementSibling
-
-//   // panel.style.display = panel.style.display === 'block' ? 'none' : 'block'
-//   panel.style.maxHeight = panel.style.maxHeight ? null : panel.scrollHeight + 'px'
-//   faqAccordian.setAttribute(
-//     'data-opened',
-//     (faqAccordian.getAttribute('data-opened') === 'false' ? true : false)
-//   )
-// })

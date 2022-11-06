@@ -442,7 +442,7 @@ a {
 .faq-title {
   text-align: center;
   color: #00b289;
-  font-size: 2.2rem;
+  font-size: 2.2eem;
   margin-bottom: 2rem;
 }
 
@@ -451,9 +451,10 @@ a {
   text-align: left;
   padding: 1rem 0;
   font-weight: 500;
-  font-size: 1.5rem;
+  font-size: 1.5em;
   background: transparent;
   border: none;
+  cursor: pointer;
 }
 
 .accordian:after {
@@ -473,11 +474,48 @@ a {
 
 .panel {
   color: #4c4d5f;
-  font-size: 1.1rem;
-  line-height: 1.6rem;
+  font-size: 1.1em;
+  line-height: 1.6em;
   overflow: hidden;
   max-height: 0;
   transition: all ease 0.4s;
+}
+
+.footer-wrapper {
+  margin-inline: auto;
+  max-width: 70%; 
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-title {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+.footer-list {
+  list-style: none;
+  padding: 0;
+  margin-block: 2rem;
+}
+
+.footer-item {
+  margin-bottom: 0.3rem;
+}
+
+.footer-link {
+  text-decoration: none;
+  font-size: 0.7rem;
+  color: #4c4d5f;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}
+
+.pricing-link {
+  color: #00b289;
 }
 
 
@@ -552,6 +590,10 @@ a {
     align-items: flex-start;
     gap: 2rem;
   }
+
+  .footer-wrapper {
+    max-width: 80%;
+  }
 }
 
 @media (max-width: 768px) {
@@ -560,6 +602,14 @@ a {
   }
   .top-spacing {
     height: 2rem;
+  }
+
+  .faq-pricing {
+    font-size: 12px;
+  }
+
+  .footer-wrapper {
+    max-width: 90%;
   }
 }
 
@@ -592,5 +642,9 @@ a {
     width: auto;
     order: 1;
     margin-bottom: 0.6rem;
+  }
+
+  .footer-wrapper {
+    flex-direction: column;
   }
 }
