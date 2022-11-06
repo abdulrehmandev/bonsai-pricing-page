@@ -10,6 +10,9 @@ const priceTitles = document.querySelectorAll('.price')
 
 const faqAccordian = document.querySelectorAll('.accordian')
 
+const footerAcc = document.querySelectorAll('.footer-accordian-arrow')
+const footerPanel = document.querySelectorAll('.footer-panel')
+
 let yearlyPrices = [17, 32, 52]
 let monthlyPrices = [24, 39, 79]
 
@@ -67,3 +70,17 @@ faqAccordian.forEach(accordian => {
     )
   })
 })
+
+for (let i = 0; i < footerAcc.length; i++) {
+  footerAcc[i].addEventListener('click', () => {
+    var panel = footerPanel[i]
+    var arrow = footerAcc[i]
+    
+    panel.style.maxHeight = panel.style.maxHeight ? null : panel.scrollHeight + 'px'
+    arrow.setAttribute(
+      'data-opened',
+      (arrow.getAttribute('data-opened') === 'false' ? true : false)
+    )
+  })
+  
+}
