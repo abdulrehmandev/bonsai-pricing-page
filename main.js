@@ -1,12 +1,15 @@
 
 const navBtn = document.querySelector('.header-toggle')
 const primaryNav = document.querySelector('.primary-navigation')
-const toggleSwitch = document.querySelector('.toggle-switch')
 
+const toggleSwitch = document.querySelector('.toggle-switch')
 const monthlyText = document.querySelector('.plan-monthly')
 const yearlyText = document.querySelector('.plan-yearly')
 
-// nav menu click
+const priceTitles = document.querySelectorAll('.price')
+
+let yearlyPrices = [17, 32, 52]
+let monthlyPrices = [24, 39, 79]
 
 navBtn.addEventListener('click', () => {
   primaryNav.classList.toggle('nav-visible')
@@ -26,4 +29,23 @@ toggleSwitch.addEventListener('click', () => {
     yearlyText.classList.remove('active-plan')
     monthlyText.classList.add('active-plan')
   }
+
+  let i = 0
+
+  if(toggleSwitch.getAttribute('data-toggled') === 'true') {
+    priceTitles.forEach(title => {
+      title.innerHTML = `${yearlyPrices[i]}`
+      i++
+    })
+  } else {
+    priceTitles.forEach(title => {
+      title.innerHTML = `${monthlyPrices[i]}`
+      i++
+    })
+  }
+
+  document.querySelectorAll('.billed-yearly').forEach(el => {
+    el.classList.toggle('hidden')
+  })
+
 })

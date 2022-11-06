@@ -33,7 +33,7 @@ a {
 }
 
 .container {
-  width: min(1200px, 100% - 2rem);
+  width: min(1200px, 100% - 3rem);
   margin-inline: auto;
 }
 
@@ -47,6 +47,7 @@ a {
   top: 0;
   width: 100%;
   box-shadow: 0 3px 1rem rgb(0, 0, 0, 0.08  );
+  z-index: 100;
 }
 
 .header-wrapper {
@@ -256,7 +257,7 @@ a {
 
 .main-cards {
   margin-block: 1rem;
-  padding: 1rem;
+  padding: 1rem 0;
   display: flex;
   gap: 1rem;
 }
@@ -266,6 +267,8 @@ a {
   box-shadow: 0 0 2rem rgb(0, 0, 0, 0.05);
   color: #4c4d5f;
   border: 1px solid rgb(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
 }
 
 .card-title {
@@ -336,6 +339,7 @@ a {
   letter-spacing: 0.0.8rem;
   border-radius: 3px;
   transition: all ease 200ms;
+  margin-top: auto;
 }
 
 .addons-wrapper {
