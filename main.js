@@ -1,6 +1,10 @@
-
+// required dom elements
 const navBtn = document.querySelector('.header-toggle')
 const primaryNav = document.querySelector('.primary-navigation')
+
+const dropdown = document.querySelector('.dropdown-title')
+const dropdownMenu = document.querySelector('.dropdown-menu')
+const dropdownArrow = document.querySelector('.dropdown-arrow')
 
 const toggleSwitch = document.querySelector('.toggle-switch')
 const monthlyText = document.querySelector('.plan-monthly')
@@ -13,23 +17,33 @@ const faqAccordian = document.querySelectorAll('.accordian')
 const footerAcc = document.querySelectorAll('.footer-accordian-arrow')
 const footerPanel = document.querySelectorAll('.footer-panel')
 
+
+// prices array to work with toggle switch
 let yearlyPrices = [17, 32, 52]
 let monthlyPrices = [24, 39, 79]
 
 
+// navigation toggle button when in smaller screen sizes
 navBtn.addEventListener('click', () => {
   primaryNav.classList.toggle('nav-visible')
 
   navBtn.setAttribute(
-    'aria-expanded',
-    (navBtn.getAttribute('aria-expanded') === 'false' ? true : false)
+      'aria-expanded',
+      (navBtn.getAttribute('aria-expanded') === 'false')
   )
 })
 
+// dropdown event of click when its in smaller screen sizes
+dropdown.addEventListener('click', () => {
+  dropdownMenu.classList.toggle('translate-menu')
+  dropdownArrow.classList.toggle('arrow-clicked')
+})
+
+// prices toggle switch event
 toggleSwitch.addEventListener('click', () => {
   toggleSwitch.setAttribute(
-    'data-toggled',
-    (toggleSwitch.getAttribute('data-toggled') === 'false' ? true : false)
+      'data-toggled',
+      (toggleSwitch.getAttribute('data-toggled') === 'false')
   )
 
   if (monthlyText.classList.contains('active-plan')) {
@@ -42,7 +56,7 @@ toggleSwitch.addEventListener('click', () => {
 
   let i = 0
 
-  if(toggleSwitch.getAttribute('data-toggled') === 'true') {
+  if (toggleSwitch.getAttribute('data-toggled') === 'true') {
     priceTitles.forEach(title => {
       title.innerHTML = `${yearlyPrices[i]}`
       i++
@@ -59,6 +73,7 @@ toggleSwitch.addEventListener('click', () => {
   })
 })
 
+// faq accordians click event
 faqAccordian.forEach(accordian => {
   accordian.addEventListener('click', () => {
     var panel = accordian.nextElementSibling
@@ -66,11 +81,12 @@ faqAccordian.forEach(accordian => {
     panel.style.maxHeight = panel.style.maxHeight ? null : panel.scrollHeight + 'px'
     accordian.setAttribute(
       'data-opened',
-      (accordian.getAttribute('data-opened') === 'false' ? true : false)
+        (accordian.getAttribute('data-opened') === 'false')
     )
   })
 })
 
+// footer accordian links click event
 for (let i = 0; i < footerAcc.length; i++) {
   footerAcc[i].addEventListener('click', () => {
     var panel = footerPanel[i]
@@ -79,8 +95,7 @@ for (let i = 0; i < footerAcc.length; i++) {
     panel.style.maxHeight = panel.style.maxHeight ? null : panel.scrollHeight + 'px'
     arrow.setAttribute(
       'data-opened',
-      (arrow.getAttribute('data-opened') === 'false' ? true : false)
+        (arrow.getAttribute('data-opened') === 'false')
     )
   })
-  
 }

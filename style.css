@@ -1,3 +1,19 @@
+/* Variables */
+
+:root {
+  --clr-primary: #00b289;
+  --clr-primary-dark: #009673;
+  --clr-dark: #4c4d5f;
+
+  --border-radius: 3px;
+
+  --font-family-sans: 'Noto Sans', sans-serif;
+  --font-family-serif: 'Lora', serif;
+
+}
+
+/* Reset */
+
 *,
 *::before,
 *::after {
@@ -9,7 +25,7 @@ body {
   padding: 0;
   height: 100vh;
 
-  font-family: 'Noto Sans', sans-serif;
+  font-family: var(--font-family-sans);
   font-size: 16px;
   padding-top: 70px;
 }
@@ -32,6 +48,8 @@ a {
   color: inherit;
 }
 
+/* Utility */
+
 .container {
   width: min(1100px, 100% - 3rem);
   margin-inline: auto;
@@ -41,12 +59,15 @@ a {
   display: none;
 }
 
+/* Components */
+
+/* Header component */
 .primary-header {
   background-color: #fff;
   position: fixed;
   top: 0;
   width: 100%;
-  box-shadow: 0 3px 1rem rgb(0, 0, 0, 0.08  );
+  box-shadow: 0 3px 1rem rgb(0, 0, 0, 0.08);
   z-index: 100;
 }
 
@@ -70,7 +91,7 @@ a {
 .nav-link {
   text-decoration: none;
   font-size: 0.8rem;
-  color: #4c4d5f;
+  color: var(--clr-dark);
 }
 
 .nav-link:hover {
@@ -97,7 +118,7 @@ a {
   list-style: none;
   width: 15rem;
   font-size: 0.9rem;
-  color: #4c4d5f;
+  color: var(--clr-dark);
   padding: 1.5rem;
   box-shadow: -4px 4px 15px rgb(0, 0, 0, 0.1);
 }
@@ -108,12 +129,12 @@ a {
 
 .dropdown-item {
   padding-block: 0.5rem 1rem;
-  border-bottom: 1px solid #4c4d5f;
+  border-bottom: 1px solid var(--clr-dark);
 }
 
 .dropdown-link {
   text-decoration: none;
-  font-family: 'Lora', serif;
+  font-family: var(--font-family-serif);
 }
 
 .dropdown-link .link-title {
@@ -132,12 +153,8 @@ a {
   opacity: 1;
 }
 
-.produce-dropdown:hover .produce-menu {
+.dropdown:hover .dropdown-menu {
   display: flex;
-}
-
-.dropdown-title:hover .dropdown-arrow {
-  rotate: 180deg;
 }
 
 .btn-wrapper {
@@ -153,45 +170,43 @@ a {
   font-size: 0.6rem;
   font-weight: 600;
   letter-spacing: 0.03rem;
-  border-radius: 3px;
+  border-radius: var(--border-radius);
   transition: all ease 200ms;
 }
 
 .login {
-  border: 1px solid #00b289;
-  color: #00b289;
+  border: 1px solid var(--clr-primary);
+  color: var(--clr-primary);
   background-color: transparent;
 }
 
 .login:hover {
   color: white;
-  background-color: #00b289;
+  background-color: var(--clr-primary);
 }
 
 .start-free {
   color: #fff;
-  background-color: #00b289;
+  background-color: var(--clr-primary);
 }
 
 .start-free:hover {
-  background-color: #009673;
+  background-color: var(--clr-primary-dark);
 }
 
 .header-toggle {
   display: none;
 }
 
-/* 
-  main
-  pricing section
-*/
-
+/* main body section */
+/* div to give extra spacing between elements */
 .top-spacing {
   height: 5rem;
   width: 100%;
   background: transparent;
 }
 
+/* pricing section and toggle switch */
 .pricing-header {
   display: flex;
   justify-content: center;
@@ -201,9 +216,9 @@ a {
 }
 
 .pricing-title {
-  font-family: 'Lora', serif;
+  font-family: var(--font-family-serif);
   font-weight: 500;
-  color: #4c4d5f;
+  color: var(--clr-dark);
   font-size: 1.7rem;
 }
 
@@ -216,7 +231,7 @@ a {
 }
 
 .toggle-switch {
-  background-color: #00b289;
+  background-color: var(--clr-primary);
   height: 24px;
   width: 42px;
   border-radius: 4rem;
@@ -255,6 +270,7 @@ a {
   right: -0.8rem;
 }
 
+/* pricing cards section */
 .main-cards {
   margin-block: 1rem;
   padding: 1rem 0;
@@ -266,7 +282,7 @@ a {
 .plan-card {
   padding: 3rem 2rem;
   box-shadow: 0 0 2rem rgb(0, 0, 0, 0.05);
-  color: #4c4d5f;
+  color: var(--clr-dark);
   border: 1px solid rgb(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
@@ -315,7 +331,7 @@ a {
 }
 
 .card-plan-features {
-  border-top: 2px solid #00b289;
+  border-top: 2px solid var(--clr-primary);
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -338,24 +354,25 @@ a {
   text-transform: uppercase;
   font-size: 0.8rem;
   font-weight: 600;
-  letter-spacing: 0.0.8rem;
-  border-radius: 3px;
+  letter-spacing: 0.0 .8rem;
+  border-radius: var(--border-radius);
   transition: all ease 200ms;
   margin-top: auto;
 }
 
+/* addons section */
 .addons-wrapper {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  color: #4c4d5f;
+  color: var(--clr-dark);
   max-width: 65rem;
   margin-inline: auto;
 }
 
 .addons-title {
   text-align: center;
-  font-family: 'Lora', serif;
+  font-family: var(--font-family-serif);
   font-weight: 400;
   margin-bottom: 1.5rem;
   width: 80%;
@@ -383,7 +400,7 @@ a {
 }
 
 .addon-link {
-  color: #00b289;
+  color: var(--clr-primary);
   font-weight: 500;
   text-decoration: none;
   text-transform: uppercase;
@@ -408,6 +425,7 @@ a {
   font-size: 0.8rem;
 }
 
+/* call to action (cta) section*/
 .cta {
   max-width: 60rem;
   margin-inline: auto;
@@ -420,7 +438,7 @@ a {
 }
 
 .cta-title {
-  font-family: 'Lora', serif;
+  font-family: var(--font-family-serif);
   font-weight: 400;
   font-size: 2.5rem;
 }
@@ -432,11 +450,13 @@ a {
   text-transform: uppercase;
   font-size: 0.8rem;
   font-weight: 600;
-  letter-spacing: 0.0.8rem;
-  border-radius: 3px;
+  letter-spacing: 0.0 .8rem;
+  border-radius: var(--border-radius);
   transition: all ease 200ms;
 }
 
+/* faq(frequently asked questions) section */
+/* with basic accordian functionality */
 .faq-pricing {
   max-width: 55rem;
   margin-inline: auto;
@@ -445,8 +465,8 @@ a {
 
 .faq-title {
   text-align: center;
-  color: #00b289;
-  font-size: 2.2eem;
+  color: var(--clr-primary);
+  font-size: 2.2 eem;
   margin-bottom: 2rem;
 }
 
@@ -477,7 +497,7 @@ a {
 }
 
 .panel {
-  color: #4c4d5f;
+  color: var(--clr-dark);
   font-size: 1.1em;
   line-height: 1.6em;
   overflow: hidden;
@@ -485,9 +505,11 @@ a {
   transition: all ease 0.4s;
 }
 
+/* primary footer section */
+/* with footer accordian type links */
 .footer-wrapper {
   margin-inline: auto;
-  max-width: 70%; 
+  max-width: 70%;
   display: flex;
   justify-content: space-between;
   gap: 1rem;
@@ -512,7 +534,7 @@ a {
 .footer-link {
   text-decoration: none;
   font-size: 0.7rem;
-  color: #4c4d5f;
+  color: var(--clr-dark);
 }
 
 .footer-link:hover {
@@ -520,7 +542,7 @@ a {
 }
 
 .pricing-link {
-  color: #00b289;
+  color: var(--clr-primary);
 }
 
 .accordian-link {
@@ -551,7 +573,7 @@ a {
 }
 
 
-
+/* media query for smaller displays */
 @media (max-width: 992px) {
   .main-cards {
     flex-direction: column;
@@ -559,6 +581,7 @@ a {
   }
 }
 
+/* main media query for tablet sized screens */
 @media (max-width: 50em) {
   .header-toggle {
     display: block;
@@ -610,16 +633,35 @@ a {
   .dropdown-menu {
     box-shadow: none;
     width: 80%;
+    top: 5rem;
+    display: flex;
+    transform: translateX(120%);
   }
 
-  .hidden {
-    display: none;
+  .dropdown-arrow {
+    position: fixed;
+    right: 2rem;
+    transform: rotate(-90deg)
+  }
+
+  .dropdown-title:hover .dropdown-arrow {
+    rotate: none;
+  }
+
+  .translate-menu {
+    transform: translateX(0);
+  }
+
+  .arrow-clicked {
+    top: 3rem;
+    left: 10%;
+    transform: rotate(90deg);
   }
 
   .main-cards {
     padding-inline: 5%;
   }
-  
+
   .cta {
     flex-direction: column;
     align-items: flex-start;
@@ -629,9 +671,6 @@ a {
   .footer-wrapper {
     max-width: 80%;
   }
-}
-
-@media (max-width: 768px) {
   .pricing-title {
     font-size: 1.5rem;
   }
